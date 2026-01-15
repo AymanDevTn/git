@@ -1,8 +1,0 @@
-def main():
-    print("  simplified.")
-    print("  devAymen  .")
-    # TEST no Release
-    # added hotFix here
-
-if __name__ == "__main__":
-    main()
