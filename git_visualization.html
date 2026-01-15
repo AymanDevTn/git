@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Workflow Visualization</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Project Git Workflow</h1>
+        <div class="mermaid">
+            gitGraph
+            commit id: "Init"
+            branch devAymen
+            checkout devAymen
+            commit id: "Dev Work"
+            checkout main
+            merge devAymen tag: "Release"
+            checkout devAymen
+            commit id: "Test No Release"
+            checkout main
+            branch hotFix
+            checkout hotFix
+            commit id: "HotFix Fix"
+            checkout main
+            merge hotFix tag: "Fixed"
+            checkout devAymen
+            merge main id: "Sync w/ Main"
+            commit id: "Post-HotFix"
+            checkout main
+            commit id: "DevOps Folder"
+        </div>
+    </div>
+</body>
+
+</html>
