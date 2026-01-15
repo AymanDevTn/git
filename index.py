@@ -1,6 +1,6 @@
 def main():
-    print("Message from Aymen: The project has been updated and simplified.")
-    print("This script is running on the devAymen branch.")
+    print("  simplified.")
+    print("  devAymen  .")
 
 if __name__ == "__main__":
     main()
